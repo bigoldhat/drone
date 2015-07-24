@@ -45,6 +45,9 @@ function fly(robot) {
     after(10*1000, function() {
         bot.drone.land();
     });
+    after(65*1000, function() {
+        bot.drone.stop();
+    });
 }
 
 function receiveConnection(connection) {

@@ -60,8 +60,12 @@ function initTracker(element) {
     // Whenever there is a new color detected, mark them
     /* A message is passed to the console whenever a new colour is detected - a new track event has occurred here if this is the case.*/
     tracker.on('track', function(event) {
-        markColors(event.data, element);
-        decideDroneMovement(event.data);
+        //markColors(event.data, element);
+        //decideDroneMovement(event.data);
+        move.up = true;
+        move.frontFlip();
+        move.down = true;
+        websocket.send(JSON.stringify(move));
         console.log(event.data);
     });
 
@@ -107,7 +111,7 @@ function decideDroneMovement(colors) {
         down: false
     };
 
-    /* ORIGINAL SOLUTION
+    /* ORIGINAL SOLUTION*/
     colors.forEach(function(rectangle) {
         if (rectangle.color === "green") {
             // Sufficiently close to the block
@@ -123,9 +127,9 @@ function decideDroneMovement(colors) {
                 move.forward = false;
             }
         }
-    }); */
+    });
 
-    colors.forEach(function(rectangle {
+/*    colors.forEach(function(rectangle {
         if (rectangle.color === "red") {
             if (rectangle.width < 250) {
                 move.forward = true;
@@ -134,7 +138,7 @@ function decideDroneMovement(colors) {
 
             }
         }
-    }
+    }*/
 
 
     /* Additional iterants are created.
@@ -183,7 +187,7 @@ function decideDroneMovement(colors) {
         console.log("Move down");
         move.down = true;
     }*/
-    websocket.send(JSON.stringify(move))
+    websocket.send(JSON.stringify(move));
 }
 
 window.addEventListener("load", init);
