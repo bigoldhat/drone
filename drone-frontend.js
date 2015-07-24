@@ -62,6 +62,12 @@ function initTracker(element) {
     tracker.on('track', function(event) {
         //markColors(event.data, element);
         //decideDroneMovement(event.data);
+        var move = {
+            forward: false,
+            backward: false,
+            up: false,
+            down: false
+        };
         move.up = true;
         move.frontFlip();
         move.down = true;
