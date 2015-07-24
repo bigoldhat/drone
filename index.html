@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Tar Streak Bridge</title>
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+
+    <script src="lib/jquery.js"></script>
+    <script src="lib/tracking.js"></script>
+    <script src="drone-frontend.js"></script>
+    <script src="colorTrackerUtils.js"></script>
+
+    <style>
+        img,
+        canvas {
+            /* The position is absolute, meaning that the drawn rectangles overlay the canvas rather than fall below it.*/
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body class="container">
+<h1 class="text-center" style="font-size: 12pt;"><span style="text-decoration: line-through;">Star Trek</span> Tar Streak Bridge</h1>
+<div id="example" class="row">
+    <div class="col-md-8">
+        <!-- The Drone view -->
+        <canvas class="drone" width="640" height="360"/></canvas>
+        <!--<img class="drone" src="snapshots/camera2.png" width="640" height="360"/>-->
+        <canvas class="canvas" width="640" height="360"></canvas>
+    </div>
+    <div class="col-md-4">
+        <h2>What do I see?</h2>
+        <div class="output">
+            Colours!
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
