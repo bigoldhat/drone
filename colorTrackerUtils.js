@@ -62,7 +62,7 @@ var TrackerUtils = (function() {
                     return false;
                 }
 
-                /* New ratiosa re then assigned here. */
+                /* New ratios are then assigned here. */
                 var rRatio2 = r / colorTotal2,
                     gRatio2 = g / colorTotal2,
                     deltaColorTotal = colorTotal / colorTotal2,

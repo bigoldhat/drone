@@ -112,7 +112,7 @@ function decideDroneMovement(colors) {
     };
 
     /* ORIGINAL SOLUTION*/
-    colors.forEach(function(rectangle) {
+    /*colors.forEach(function(rectangle) {
         if (rectangle.color === "green") {
             // Sufficiently close to the block
             if (rectangle.width > 250) {
